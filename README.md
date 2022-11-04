@@ -39,7 +39,20 @@ npm run start:dev
 http://localhost:3000/api/v2/seed
 ```
 
+
 ## Stack Usado
 
 - MongoDB
 - Nest
+
+# Production Build
+1. Crear el archivo ```.env.prod``` 
+2. Llenar las variables de entorno para productcion
+3. Crear la nueva imagen 
+```
+$ docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
+4. Para cuando se requiera ejecutar la imagen nuevamente, se implementa
+```
+$ docker-compose -f docker-compose.prod.yaml --env-file .env.prod up -d
+```
